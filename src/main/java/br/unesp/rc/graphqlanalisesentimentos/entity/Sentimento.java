@@ -16,9 +16,9 @@ public class Sentimento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "idSentimento")
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idSentimento;
+	private Integer id;
         
         @Column(name = "nome")
 	private String nome;
@@ -29,12 +29,12 @@ public class Sentimento implements Serializable {
         @Column(name = "descricao")
 	private String descricao;
 
-    public Integer getIdSentimento() {
-        return idSentimento;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdSentimento(Integer idSentimento) {
-        this.idSentimento = idSentimento;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
