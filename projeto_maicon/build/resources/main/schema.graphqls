@@ -1,0 +1,35 @@
+type Query {
+  allSentimentos: [Sentimento]
+  allUsuarios: [Usuario]
+  sentimento(id: ID!): Sentimento
+}
+
+type Mutation {
+  addSentimento(nome: String!, emoticon: String!, descricao: String!): Sentimento!
+  addUsuario(nome: String!): Usuario!
+  updateSentimento(id: ID!, nome: String!, emoticon: String!, descricao: String!): Sentimento!
+  deleteSentimento(id: ID!): Boolean
+  makeAnalise(id_frase: ID!, id_usuario: ID!): Boolean
+}
+
+type Sentimento {
+  id: ID
+  nome: String!
+  emoticon: String!
+  descricao: String!
+}
+
+type Usuario {
+  id: ID
+  nome: String!
+}
+
+type Analise {
+    id: ID
+    frase: Frase!
+    sentimento: Sentimento!
+    usuario: Usuario!
+    novo: Integer
+    correto: Integer
+}
+
