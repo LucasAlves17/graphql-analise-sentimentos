@@ -1,3 +1,5 @@
+scalar Date
+
 type Query {
   allSentimentos: [Sentimento]
   allUsuarios: [Usuario]
@@ -8,7 +10,9 @@ type Query {
 type Mutation {
   addSentimento(nome: String!, emoticon: String!, descricao: String!): Sentimento!
   addUsuario(nome: String!): Usuario!
+  addFrase(texto: String!): Frase!
   updateSentimento(id: ID!, nome: String!, emoticon: String!, descricao: String!): Sentimento!
+  updateFrase(id: ID!, texto: String!, sentimento_id: ID!): Frase!
   deleteSentimento(id: ID!): Boolean  
 }
 
@@ -22,5 +26,12 @@ type Sentimento {
 type Usuario {
   id: ID
   nome: String!
+}
+
+type Frase {
+  id: ID
+  texto: String!
+  dtSubmissao: Date
+  sentimento: Sentimento
 }
 

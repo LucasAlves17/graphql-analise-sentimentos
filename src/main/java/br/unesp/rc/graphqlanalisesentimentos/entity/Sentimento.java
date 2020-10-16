@@ -13,21 +13,21 @@ import javax.persistence.Table;
 @Table(name = "sentimento")
 public class Sentimento implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-        
-        @Column(name = "nome")
-	private String nome;
-        
-        @Column(name = "emoticon")
-	private String emoticon;
-        
-        @Column(name = "descricao")
-	private String descricao;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "emoticon")
+    private String emoticon;
+
+    @Column(name = "descricao")
+    private String descricao;
 
     public Integer getId() {
         return id;
