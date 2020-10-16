@@ -2,6 +2,7 @@ type Query {
   allSentimentos: [Sentimento]
   allUsuarios: [Usuario]
   sentimento(id: ID!): Sentimento
+  usuario(id: ID!): Usuario
 }
 
 type Mutation {
