@@ -24,22 +24,24 @@ public class Analise implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @Column(name = "data_analise")
-    private Date dtAnalise;
-    
-    @Column(name = "correto")
-    private boolean correto;
-    
-    @Column(name = "nova")
-    private boolean nova;
-    
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "frase_id", nullable = false, updatable = false)
     private Frase frase;
     
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false, updatable = false)
     private Usuario usuario;
+    
+    @ManyToOne
+    @JoinColumn(name = "sentimento_id", nullable = false, updatable = false)
+    private Sentimento sentimento;
+    
+    @Column(name = "correto")
+    private boolean correto;
+    
+    @Column(name = "novo")
+    private boolean novo;
+    
 
     public Integer getId() {
         return id;
@@ -47,14 +49,6 @@ public class Analise implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Date getDtAnalise() {
-        return dtAnalise;
-    }
-
-    public void setDtAnalise(Date dtAnalise) {
-        this.dtAnalise = dtAnalise;
     }
 
     public boolean isCorreto() {
@@ -65,12 +59,12 @@ public class Analise implements Serializable{
         this.correto = correto;
     }
 
-    public boolean isNova() {
-        return nova;
+    public boolean isNovo() {
+        return novo;
     }
 
-    public void setNova(boolean nova) {
-        this.nova = nova;
+    public void setNovo(boolean novo) {
+        this.novo = novo;
     }
 
     public Frase getFrase() {

@@ -28,13 +28,11 @@ public class FraseMutationResolver implements GraphQLMutationResolver{
         return fraseRepository.saveAndFlush(frase);
     }
     
-    public Frase updateFrase(Integer id, String texto, Integer sentimento_id){
-        Sentimento sentimento = sentimentoRepository.findById(sentimento_id).orElseGet(null);
+    public Frase updateFrase(Integer id, String texto){   
         
         Frase frase = new Frase();
         frase.setId(id);
         frase.setTexto(texto);
-        frase.setSentimento(sentimento);
 
         return fraseRepository.saveAndFlush(frase);
     }     

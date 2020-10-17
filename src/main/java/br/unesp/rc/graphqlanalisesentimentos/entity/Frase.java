@@ -27,15 +27,7 @@ public class Frase implements Serializable{
 
     @Column(name = "texto")
     private String texto;
-    
-    @Basic(optional = false)
-    @Column(name = "data_submissao", insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dtSubmissao;
 
-    @OneToOne
-    @JoinColumn(name = "sentimento_id", nullable = true, updatable = true)
-    private Sentimento sentimento;
 
     public Integer getId() {
         return id;
@@ -51,21 +43,5 @@ public class Frase implements Serializable{
 
     public void setTexto(String texto) {
         this.texto = texto;
-    }
-
-    public Date getDtSubmissao() {
-        return dtSubmissao;
-    }
-
-    public void setDtSubmissao(Date dtSubmissao) {
-        this.dtSubmissao = dtSubmissao;
-    }
-
-    public Sentimento getSentimento() {
-        return sentimento;
-    }
-
-    public void setSentimento(Sentimento sentimento) {
-        this.sentimento = sentimento;
     }
 }
