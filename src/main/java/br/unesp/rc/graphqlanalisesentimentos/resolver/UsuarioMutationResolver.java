@@ -14,10 +14,11 @@ public class UsuarioMutationResolver implements GraphQLMutationResolver{
     @Autowired
     private UsuarioRepository usuarioRepository;
     
-    public Usuario addUsuario(String nome) {
+    public Usuario addUsuario(String nome, String sobrenome) {
 
         Usuario usuario = new Usuario();
         usuario.setNome(nome);
+        usuario.setSobrenome(sobrenome);
 
         return usuarioRepository.saveAndFlush(usuario);
     }

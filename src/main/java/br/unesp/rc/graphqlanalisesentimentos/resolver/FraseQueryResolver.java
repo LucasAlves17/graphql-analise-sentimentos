@@ -15,7 +15,7 @@ public class FraseQueryResolver implements GraphQLQueryResolver{
     @Autowired
     private FraseRepository fraseRepository;
     
-    public List<Frase> allSentimentos(){
+    public List<Frase> allFrase(){
         return fraseRepository.findAll();
     }
     

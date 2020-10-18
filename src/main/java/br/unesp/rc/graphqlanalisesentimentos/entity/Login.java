@@ -64,4 +64,5 @@ public class Login implements Serializable{
         this.usuario = usuario;
     }
     
+    
 }

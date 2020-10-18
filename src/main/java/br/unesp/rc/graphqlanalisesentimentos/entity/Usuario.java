@@ -23,6 +23,10 @@ public class Usuario implements Serializable{
         @Column(name = "nome")
 	private String nome;
         
+        @Column(name = "sobrenome")
+	private String sobrenome;
+
+        
     public Integer getId() {
         return id;
     }
@@ -38,5 +42,12 @@ public class Usuario implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    public String getSobrenome() {
+        return sobrenome;
+    }
 
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
 }

@@ -7,6 +7,7 @@ type Query {
 
   allUsuarios: [Usuario] 
   usuario(id: ID!): Usuario
+
 }
 
 type Mutation {
@@ -15,9 +16,12 @@ type Mutation {
   deleteSentimento(id: ID!): Boolean
 
   addFrase(texto: String!): Frase!
-  updateFrase(id: ID!, texto: String!): Frase!
 
-  addUsuario(nome: String!): Usuario!     
+  addUsuario(nome: String!, sobrenome: String!): Usuario!   
+
+  addLogin(nomeUsuario: String!, senha: String!, usuario_id: ID!): Login!    
+
+  addContato(email: String!, celular: String!, usuario_id: ID!): Contato!    
 }
 
 type Sentimento {
@@ -30,6 +34,7 @@ type Sentimento {
 type Usuario {
   id: ID
   nome: String!
+  sobrenome: String!
 }
 
 type Frase {
@@ -37,3 +42,16 @@ type Frase {
   texto: String!
 }
 
+type Login {
+  id: ID
+  nomeUsuario: String!
+  senha: String!
+  usuario: Usuario!
+}
+
+type Contato {
+  id: ID
+  email: String!
+  celular: String!
+  usuario: Usuario!
+}
