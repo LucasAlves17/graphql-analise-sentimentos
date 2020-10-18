@@ -8,6 +8,7 @@ type Query {
   allUsuarios: [Usuario] 
   usuario(id: ID!): Usuario
 
+  autenticarLogin(nomeUsuario: String, senha: String): Boolean!
 }
 
 type Mutation {
@@ -16,7 +17,6 @@ type Mutation {
   deleteSentimento(id: ID!): Boolean
 
   addFrase(texto: String!): Frase!
-  updateFrase(id: ID!, texto: String!): Frase!
 
   addUsuario(nome: String!, sobrenome: String!): Usuario!   
 

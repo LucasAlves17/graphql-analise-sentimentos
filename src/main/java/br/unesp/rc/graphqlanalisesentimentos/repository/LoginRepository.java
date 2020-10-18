@@ -6,5 +6,5 @@ import br.unesp.rc.graphqlanalisesentimentos.entity.Login;
 
 public interface LoginRepository extends JpaRepository<Login, Integer>{
     
-    boolean existsLoginByNomeUsuarioAndSenha(String nome_usuario, String senha);
+    boolean existsLoginByNomeUsuarioAndSenha(String nomeUsuario, String senha);
 }

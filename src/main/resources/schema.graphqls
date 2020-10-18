@@ -8,6 +8,7 @@ type Query {
   allUsuarios: [Usuario] 
   usuario(id: ID!): Usuario
 
+  autenticarLogin(nomeUsuario: String, senha: String): Boolean!
 }
 
 type Mutation {
